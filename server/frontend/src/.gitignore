@@ -1,0 +1,11 @@
+# Node.js/backend ignores
+server/node_modules/
+server/.env
+
+# React/frontend ignores
+frontend/node_modules/
+frontend/.env
+
+#OS junk
+.DS_Store
+Thumbs.db

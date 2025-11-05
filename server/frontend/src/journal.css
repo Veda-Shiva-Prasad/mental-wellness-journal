@@ -1,0 +1,256 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.journal-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0d5f5 0%, #f5e6ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.journal-container {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 60px rgba(124, 58, 237, 0.15);
+  max-width: 600px;
+  width: 100%;
+}
+
+.journal-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #7c3aed;
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+
+.journal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.mood-input,
+.entry-input {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  font-size: 1rem;
+  border: 2px solid #e9d5ff;
+  border-radius: 10px;
+  background: #faf5ff;
+  font-family: inherit;
+  transition: border 0.3s;
+}
+
+.mood-input:focus,
+.entry-input:focus {
+  outline: none;
+  border-color: #a78bfa;
+}
+
+.entry-input {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.save-btn {
+  background: #7c3aed;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.save-btn:hover {
+  background: #6d28d9;
+}
+
+.error-msg {
+  color: #ef4444;
+  background: #fee;
+  padding: 0.7rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.entries-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin-bottom: 1.2rem;
+}
+
+.entries-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.loading-text,
+.empty-text {
+  text-align: center;
+  color: #9333ea;
+  font-size: 1rem;
+  padding: 2rem 0;
+}
+
+.entry-card {
+  background: linear-gradient(135deg, #f3e8ff 0%, #faf5ff 100%);
+  border-left: 5px solid #7c3aed;
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.entry-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(124, 58, 237, 0.15);
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.entry-mood {
+  background: #7c3aed;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.entry-date {
+  font-size: 0.85rem;
+  color: #7c3aed;
+  font-weight: 500;
+}
+
+.entry-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.15);
+}
+
+.entry-text {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.edit-textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid #c4b5fd;
+  border-radius: 8px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.edit-buttons {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.save-edit-btn,
+.cancel-edit-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.save-edit-btn {
+  background: #7c3aed;
+  color: #fff;
+}
+
+.save-edit-btn:hover {
+  background: #6d28d9;
+}
+
+.cancel-edit-btn {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.cancel-edit-btn:hover {
+  background: #d1d5db;
+}
+
+.logout-btn {
+  width: 100%;
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .journal-container {
+    padding: 1.5rem;
+  }
+
+  .journal-title {
+    font-size: 1.6rem;
+  }
+}

@@ -4,8 +4,16 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+app.use(
+  cors({
+    origin: [
+      "https://mental-wellness-journal-rouge.vercel.app",
+      "http://localhost:3000",
+    ],
+    credentials: true,
+  })
+);
 
-app.use(cors());
 app.use(express.json());
 
 // ===== MongoDB Connection =====

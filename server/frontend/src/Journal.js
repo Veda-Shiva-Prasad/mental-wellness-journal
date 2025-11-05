@@ -18,7 +18,7 @@ export default function Journal({ onLogout }) {
       setLoading(true);
       setError("");
       try {
-        const res = await fetch("http://localhost:5000/api/journals", {
+        const res = await fetch("https://mental-wellness-journal-ds4l.onrender.com/api/journals", {
           headers: { Authorization: "Bearer " + token },
         });
         if (!res.ok) throw new Error();
@@ -37,7 +37,7 @@ export default function Journal({ onLogout }) {
     if (!entry.trim()) return;
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/journals", {
+      const res = await fetch("https://mental-wellness-journal-ds4l.onrender.com/api/journals", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -58,7 +58,7 @@ export default function Journal({ onLogout }) {
   async function handleDelete(id) {
     if (!window.confirm("Delete this entry?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/journals/${id}`, {
+      const res = await fetch(`https://mental-wellness-journal-ds4l.onrender.com/api/journals/${id}`, {
         method: "DELETE",
         headers: { Authorization: "Bearer " + token },
       });
@@ -73,7 +73,7 @@ export default function Journal({ onLogout }) {
     e.preventDefault();
     if (!editValue.trim()) return;
     try {
-      const res = await fetch(`http://localhost:5000/api/journals/${editId}`, {
+      const res = await fetch(`https://mental-wellness-journal-ds4l.onrender.com/api/journals/${editId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

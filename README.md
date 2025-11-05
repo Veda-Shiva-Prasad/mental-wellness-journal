@@ -1,8 +1,24 @@
 # Mental Wellness Journal 🌱
 
+A full-stack MERN journaling application with user authentication and mood tracking.
+
+## 🚀 Live Demo
+**[View Live App](https://mental-wellness-journal-rouge.vercel.app)**
+
+---
+
 Welcome to the Mental Wellness Journal!
 
 This is a simple, beginner-friendly MERN stack project (MongoDB, Express, React, Node.js) built to help you reflect on your mental well-being. Write private journal entries, track your moods, and see your growth—all safely stored in the cloud.
+
+---
+
+## 🛠️ Tech Stack
+- **Frontend:** React, CSS
+- **Backend:** Node.js, Express
+- **Database:** MongoDB Atlas
+- **Authentication:** JWT (JSON Web Tokens)
+- **Deployment:** Vercel (Frontend) + Render (Backend)
 
 ---
 
@@ -10,8 +26,10 @@ This is a simple, beginner-friendly MERN stack project (MongoDB, Express, React,
 
 - **Sign Up & Login:** Your private journal is safe and only for you.
 - **Journal Management:** Easily add, edit, or delete entries.
+- **Mood Tracking:** Tag your entries with your current mood.
 - **Mobile-Responsive:** Use it on any device—phone, tablet, or desktop.
 - **Cloud Database:** All data is securely kept in MongoDB Atlas.
+- **Secure Authentication:** Password hashing with bcrypt and JWT tokens.
 
 ---
 
@@ -29,7 +47,6 @@ server/
 ├── .gitignore
 └── package.json
 
-
 - Back-end code is inside the `server` folder.
 - React front-end is inside `server/frontend`.
 
@@ -42,9 +59,10 @@ server/
 cd server
 2. Install dependencies:
 npm install
-3. Create a `.env` file in the `server` folder using this format:
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.ipqcxfd.mongodb.net/?appName=Cluster0
-_(Replace `<username>` and `<password>` with your real credentials. Never publish your .env!)_
+3. Create a `.env` file in the `server` folder:
+MONGO_URI=mongodb+srv://<username>:<password>@cluster0.ipqcxfd.mongodb.net/wellness?appName=Cluster0
+JWT_SECRET=your_jwt_secret_key
+_(Replace `<username>` and `<password>` with your credentials. Never publish your .env!)_
 4. Start the server:
 npm start
 
@@ -60,9 +78,9 @@ npm start
 
 ## 🚀 Deployment
 
-- Both backend and frontend are well-structured for [Render](https://render.com/) deployment.
+- **Frontend:** Deployed on [Vercel](https://vercel.com/)
+- **Backend:** Deployed on [Render](https://render.com/)
 - Never upload your `.env` (secrets) to GitHub!
-- You can deploy backend and frontend as two separate web services on Render for best results.
 
 ---
 
@@ -80,5 +98,5 @@ Feel free to fork, open issues, or submit pull requests—let's make mental well
 
 ---
 
-**Built with care for better mind days.**
+**Built with care for better mind days. 💜**
 

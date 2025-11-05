@@ -1,6 +1,6 @@
 const express = require("express");
 const jwt = require("jsonwebtoken");
-const Journal = require("../models/journal");
+const Journal = require("../models/Journal");
 
 const router = express.Router();
 const JWT_SECRET = "your_jwt_secret_key"; // Or use process.env.JWT_SECRET in production

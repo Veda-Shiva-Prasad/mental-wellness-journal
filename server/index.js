@@ -10,20 +10,18 @@ app.use(express.json());
 
 // ===== MongoDB Connection =====
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  .connect(process.env.MONGO_URI)
+  .then(() => {
+    console.log("MongoDB connected successfully!");
+
+    // Load routes AFTER MongoDB connects
+    const journalRoutes = require("./routes/journal");
+    const authRoutes = require("./routes/auth");
+
+    app.use("/api/journals", journalRoutes);
+    app.use("/auth", authRoutes);
   })
-  .then(() => console.log("MongoDB connected successfully!"))
   .catch((err) => console.error("MongoDB connection error:", err));
-
-// --- Import your route files ---
-const journalRoutes = require("./routes/journal");
-const authRoutes = require("./routes/auth");
-
-// --- Connect your route files here ---
-app.use("/api/journals", journalRoutes);
-app.use("/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("Mental Wellness Journal API running!");
